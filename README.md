@@ -44,3 +44,25 @@ node server.js
 This server will start on port 3000. You can access the API at http://localhost:3000.
 
 API Documentation
+
+Transactions
+
+POST /transactions
+
+Description: Add a new transaction.
+
+Request Body:json
+
+{
+  "type": "income",
+  "category": 1,
+  "amount": 1000,
+  "date": "2023-01-01",
+  "description": "Salary"
+}
+Response:json
+
+{
+  "id": 1
+}
+201 created
