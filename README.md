@@ -60,9 +60,86 @@ Request Body:json
   "date": "2023-01-01",
   "description": "Salary"
 }
+
 Response:json
 
 {
   "id": 1
 }
-201 created
+
+Expected Response: 201 created with a JSON object of the transaction
+
+GET /transactions
+
+Description: Retrieve all transactions.
+
+Response:json
+[
+  {
+    "id": 1,
+    "type": "income",
+    "category": 1,
+    "amount": 1000,
+    "date": "2023-01-01",
+    "description": "Salary"
+  }
+]
+Expected Response: 200 OK with a JSON object of the transaction
+
+GET /transactions/:id
+
+Description: Retrieve a transaction by ID.
+
+Response:json
+
+{
+  "id": 1,
+  "type": "income",
+  "category": 1,
+  "amount": 1000,
+  "date": "2023-01-01",
+  "description": "Salary"
+}
+
+Expected Response: 200 OK with a JSON object of the transaction with ID 1.
+
+PUT /transactions/:id
+
+Description: Update a transaction by ID.
+
+Request Body:json
+
+{
+  "type": "expense",
+  "category": 1,
+  "amount": 500,
+  "date": "2023-01-02",
+  "description": "Groceries"
+}
+Response: 204 No Content
+
+DELETE /transactions/:id
+
+Description: Delete a transaction by ID.
+
+Response: 204 No Content
+
+Postman Screenshots
+
+POST /transactions:"C:\Users\User\OneDrive\Pictures\Screenshots\post_transaction.png"
+
+GET /transactions
+
+Optional Enhancements
+
+Implement basic user authentication and link transactions to specific users.
+
+Add pagination to the GET /transactions endpoint to handle large volumes of data.
+
+Create an endpoint for generating reports, such as monthly spending by category.
+
+Author
+Shaik Salma Sultana
+
+License
+This project is licensed under the MIT License.
